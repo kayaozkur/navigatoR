@@ -37,5 +37,9 @@ navigatoR has a wide appeal due to its ability to streamline and simplify R prog
 There are still components under development and improvement. I appreciate the R community's continued support and look forward to further enhancements and the integration of additional functionalities. Your feedback and contributions are invaluable in making navigatoR a truly versatile tool.
 
  ## TLDR 🏂
-navigatoR is an efficient R package that simplifies data analysis through an interactive menu. It allows users to execute R functions with minimal code entry, provides syntax with comments, records this into a text file, and supports chained numeric inputs. navigatoR includes various R packages for data handling, inspection, text shaping, evaluation, and visualization, making it a comprehensive and time-saving tool for the R environment.
-
+- navigatoR is an R package in development that simplifies data analysis through an interactive menu.
+- It allows users to execute R functions with minimal code entry
+- Provides syntax with comments
+- Logs the output and comments a .txt file,
+- Supports chained numeric inputs
+- Includes various R packages for data handling, inspection, text shaping, evaluation, and visualization.
