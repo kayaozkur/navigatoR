@@ -1,4 +1,4 @@
-# navigatoR: A Comprehensive Interactive Tool for R Programming 🕵️ 👨‍💻
+# navigatoR: Interactive Tool for R Programming 🕵️ 👨‍💻
 TLDR;
 navigatoR is an efficient R package that simplifies data analysis through an interactive menu. It allows users to execute R functions with minimal code entry, provides syntax with comments, records this into a text file, and supports chained numeric inputs. navigatoR includes various R packages for data handling, inspection, text shaping, evaluation, and visualization, making it a comprehensive and time-saving tool for the R environment.
 
