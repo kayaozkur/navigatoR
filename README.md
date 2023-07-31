@@ -1,6 +1,6 @@
 # navigatoR: Interactive Tool for R Programming 🕵️ 👨‍💻
 
-[TLDR](#tldr) down below;
+[TLDR](#tldr-) down below;
 
 ## Table of Contents 📑
 - [Core Features](#Core-Features-)
