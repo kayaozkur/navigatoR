@@ -3,7 +3,7 @@
 [TLDR](#tldr-) down below;
 
 ## Table of Contents 📑
-- [Core Features](#Core-Features-)
+- [Core Features](#Core_Features-)
 - [Integrated Packages](#Integrated-Packages-)
 - [Potential Users](#Potential-Users-)
 - [Development Updates](#Development-Updates-)
