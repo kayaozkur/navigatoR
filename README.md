@@ -3,10 +3,10 @@
 [TLDR](#tldr-) down below;
 
 ## Table of Contents 📑
-- [Core Features](#Core_Features-)
-- [Integrated Packages](#Integrated-Packages-)
-- [Potential Users](#Potential-Users-)
-- [Development Updates](#Development-Updates-)
+- [Core Features](# Core-Features-)
+- [Integrated Packages](# Integrated-Packages-)
+- [Potential Users](# Potential-Users-)
+- [Development Updates](# Development-Updates-)
 
 ## Core Features 📌
 - [x] **Interactive Multi-level Menu**: Enables users to navigate through multiple levels of an interactive menu. Each menu item triggers a specific R function or set of functions, which can be executed directly from the menu.
