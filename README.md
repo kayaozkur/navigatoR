@@ -1,4 +1,4 @@
-# navigatoR: Interactive Tool for R Programming 🕵️ 👨‍💻
+# navigatoR: Interactive Tool for R Programming 🐊 👨‍💻
 
 [TLDR](#tldr-) down below;
 
