@@ -69,17 +69,24 @@ feather_menu <- function() {
   clipr::write_clip(feather_selected_action)
   clipr::read_clip() %>%
     write(file = "clips.txt", sep = "\n", append = TRUE)
-  message("Comment Placed")
-  message(cli::rule())
+  cli::cli_alert_success(text = "Comment Placed")
+
 
   clipr::write_clip(feather_selected_option)
-  message("Selected Option Has Been Copied")
-  message(cli::rule())
+  cli::cli_alert_success(text = "Selected Option Has Been Copied")
+
 
   clipr::read_clip() %>%
     write(file = "clips.txt", sep = "\n", append = TRUE)
-  message("File Updated")
+  cli::cli_alert_success(text = "File Updated")
+
+
+  cli::cli_alert_info(text = "Code is Available in Clipboard")
+  cli::rule() %>% print()
+  cat(feather_selected_option)
+
 }
+
 
 
 
@@ -116,16 +123,22 @@ json_lite_menu <- function() {
   clipr::write_clip(json_lite_selected_action)
   clipr::read_clip() %>%
     write(file = "clips.txt", sep = "\n", append = TRUE)
-  message("Comment Placed")
-  message(cli::rule())
+  cli::cli_alert_success(text = "Comment Placed")
+
 
   clipr::write_clip(json_lite_selected_option)
-  message("Selected Option Has Been Copied")
-  message(cli::rule())
+  cli::cli_alert_success(text = "Selected Option Has Been Copied")
+
 
   clipr::read_clip() %>%
     write(file = "clips.txt", sep = "\n", append = TRUE)
-  message("File Updated")
+  cli::cli_alert_success(text = "File Updated")
+
+
+  cli::cli_alert_info(text = "Code is Available in Clipboard")
+  cli::rule() %>% print()
+  cat(json_lite_selected_option)
+
 }
 
 
@@ -147,7 +160,7 @@ vroom_io_menu <- function() {
     "Back"
   )
 
-  vroom_io_selection <- menu(vroom_io_option, title = "Please select an action with jsonlite:")
+  vroom_io_selection <- menu(vroom_io_option, title = "Please select an action with vroom:")
 
   # Define Options in the vroom IO Menu
   vroom_io_selected_option <- switch(vroom_io_selection,
@@ -181,16 +194,21 @@ vroom_io_menu <- function() {
   clipr::write_clip(vroom_io_selected_action)
   clipr::read_clip() %>%
     write(file = "clips.txt", sep = "\n", append = TRUE)
-  message("Comment Placed")
-  message(cli::rule())
+  cli::cli_alert_success(text = "Comment Placed")
+
 
   clipr::write_clip(vroom_io_selected_option)
-  message("Selected Option Has Been Copied")
-  message(cli::rule())
+  cli::cli_alert_success(text = "Selected Option Has Been Copied")
+
 
   clipr::read_clip() %>%
     write(file = "clips.txt", sep = "\n", append = TRUE)
-  message("File Updated")
+  cli::cli_alert_success(text = "File Updated")
+
+
+  cli::cli_alert_info(text = "Code is Available in Clipboard")
+  cli::rule() %>% print()
+  cat(vroom_io_selected_option)
 }
 
 
@@ -214,7 +232,7 @@ arrow_menu <- function() {
     "Back"
   )
 
-  arrow_selection <- menu(arrow_option, title = "Please select an action with jsonlite:")
+  arrow_selection <- menu(arrow_option, title = "Please select an action with arrow:")
 
   # Define Options in the json_lite Menu
   arrow_selected_option <- switch(arrow_selection,
@@ -252,20 +270,116 @@ arrow_menu <- function() {
   clipr::write_clip(arrow_selected_action)
   clipr::read_clip() %>%
     write(file = "clips.txt", sep = "\n", append = TRUE)
-  message("Comment Placed")
-  message(cli::rule())
+  cli::cli_alert_success(text = "Comment Placed")
+
 
   clipr::write_clip(arrow_selected_option)
-  message("Selected Option Has Been Copied")
-  message(cli::rule())
+  cli::cli_alert_success(text = "Selected Option Has Been Copied")
+
 
   clipr::read_clip() %>%
     write(file = "clips.txt", sep = "\n", append = TRUE)
-  message("File Updated")
+  cli::cli_alert_success(text = "File Updated")
+
+
+  cli::cli_alert_info(text = "Code is Available in Clipboard")
+  cli::rule() %>% print()
+  cat(arrow_selected_option)
 }
 
 
+
+# Data Manipulation Functions ----
+
+## janitor_menu ----
+
+# Define json_lite Menu
+janitor_menu <- function() {
+  janitor_option <- c(
+    "Clean Names",
+    "Compare DF Columns: Compare All Columns for 2+ DFs",
+    "Compare DF Columns: Compare Matching Columns for 2+ DFs",
+    "Compare DF Columns: Compare Mismatching Columns for 2+ DFs",
+    "Create Tabyl: Generic",
+    "Create Tabyl: Count, Total, Percentages and by Row",
+    "Create Tabyl: Count, Total, Percentages and by Col",
+    "Create Tabyl: Count, Total, Percentages and by Row and Col",
+    "Get Duplicate Rows:  2+ Cols Based on Cols",
+    "Get Duplicate Rows:  2+ Cols Based on Cols, Exclude Certain Cols",
+    "One to One Mapping: Get One to One Mapping of Cols in a DF",
+    "Remove Constant Cols: Remove Constant Cols from DF",
+    "Get Constant Cols: Get Cols that have Constant Value",
+    "Remove Empty: Remove Empty Rows",
+    "Remove Empty: Remove Empty Cols",
+    "Remove Empty: Remove Empty Rows and Cols",
+    "Back"
+  )
+  janitor_selection <- menu(janitor_option, title = "Please select an action with janitor:")
+
+  # Define Options in the janitor Menu
+  janitor_selected_option <- switch(janitor_selection,
+    "janitor::clean_names()",
+    "janitor::compare_df_cols(dfname1, dfname2, dfname3, return = \"all\", bind_method = \"rbind\")",
+    "janitor::compare_df_cols(dfname1, dfname2, dfname3, return = \"match\", bind_method = \"rbind\")",
+    "janitor::compare_df_cols(dfname1, dfname2, dfname3, return = \"mismatch\", bind_method = \"rbind\")",
+    "janitor::tabyl(dfcolname1, dfcolname2)",
+    "janitor::tabyl(dfcolname1, dfcolname2) %>% janitor::adorn_totals(\"row\") %>%  janitor::adorn_percentages(\"row\") %>% janitor::adorn_ns() %>% janitor::adorn_pct_formatting(digits = 2) %>% janitor::adorn_title()",
+    "janitor::tabyl(dfcolname1, dfcolname2) %>% janitor::adorn_totals(\"col\") %>%  janitor::adorn_percentages(\"col\") %>% janitor::adorn_ns() %>% janitor::adorn_pct_formatting(digits = 2) %>% janitor::adorn_title()",
+    "janitor::tabyl(dfcolname1, dfcolname2) %>% janitor::adorn_totals(\"all\") %>%  janitor::adorn_percentages(\"all\") %>% janitor::adorn_ns() %>% janitor::adorn_pct_formatting(digits = 2) %>% janitor::adorn_title()",
+    "janitor::get_dupes(dfcolname1, dfcolname2, dfcolname3)",
+    "janitor::get_dupes(-c(dfcolname1, dfcolname2, dfcolname3))",
+    "janitor::get_one_to_one(dfname1)",
+    "janitor::remove_constant(dfname1)",
+    "dplyr::select(dfname1, !dplyr::all_of(names(janitor::remove_constant(.)))) %>% unique()",
+    "janitor::remove_empty(which = \"rows\", cutoff = 1, quiet = FALSE)",
+    "janitor::remove_empty(which = \"cols\", cutoff = 1, quiet = FALSE)",
+    "janitor::remove_empty(which = c(\"rows\", \"cols\"), cutoff = 1, quiet = FALSE)",
+    return(sub_menu())
+  )
+
+  # Define Comments for the Selected Option
+  janitor_selected_action <- switch(janitor_selection,
+    "Cleaned Names",
+    "Compared All Columns for 2+ DFs",
+    "Compared Matching Columns for 2+ DFs",
+    "Compared Mismatching Columns for 2+ DFs",
+    "Created Generic Tabyl",
+    "Created Row Tabyl",
+    "Created Col Tabyl",
+    "Created Row and Col Tabyl",
+    "Got Duplicated Rows",
+    "Excluded Duplicated Rows",
+    "Got One to One Mapping of Cols in a DF",
+    "Removed Constant Cols from DF",
+    "Gott Cols that have Constant Value",
+    "Removed Empty Rows",
+    "Removed Empty Cols",
+    "Removed Empty Rows and Cols",
+  )
+
+  clipr::write_clip(janitor_selected_action)
+  clipr::read_clip() %>%
+    write(file = "clips.txt", sep = "\n", append = TRUE)
+  cli::cli_alert_success(text = "Comment Placed")
+
+
+  clipr::write_clip(janitor_selected_option)
+  cli::cli_alert_success(text = "Selected Option Has Been Copied")
+
+
+  clipr::read_clip() %>%
+    write(file = "clips.txt", sep = "\n", append = TRUE)
+  cli::cli_alert_success(text = "File Updated")
+
+
+  cli::cli_alert_info(text = "Code is Available in Clipboard")
+  cli::rule() %>% print()
+  cat(feather_selected_option)
+
+}
+
 main_menu()
+
 
 
 
