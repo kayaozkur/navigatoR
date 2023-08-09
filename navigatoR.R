@@ -35,7 +35,8 @@ sub_menu <- function() {
   )
 }
 
-# Feather Menu ----
+# I/O Functions ----
+## Feather Menu ----
 
 # Define Feather Menu
 feather_menu <- function() {
@@ -82,7 +83,7 @@ feather_menu <- function() {
 
 
 
-# JSON Menu ----
+## JSON Menu ----
 
 # Define json_lite Menu
 json_lite_menu <- function() {
@@ -128,7 +129,7 @@ json_lite_menu <- function() {
 }
 
 
-# vroom Menu ----
+## vroom Menu ----
 
 # Define vroom IO Menu
 vroom_io_menu <- function() {
@@ -193,7 +194,7 @@ vroom_io_menu <- function() {
 }
 
 
-# arrow Menu ----
+## arrow Menu ----
 
 # Define arrow Menu
 arrow_menu <- function() {
