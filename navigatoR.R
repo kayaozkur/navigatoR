@@ -199,15 +199,15 @@ vroom_io_menu <- function() {
 arrow_menu <- function() {
   arrow_option <- c(
     "Read Arrow File: Read a Feather File",
-    "Read Arrow File: Read a Arrow IPC (aka Feather) File",
-    "Read Arrow File: Read Arrow IPC Stream Format",
+    "Read Arrow File: Read an Arrow IPC (aka Feather) File",
+    "Read Arrow File: Read an Arrow IPC Stream Format",
     "Read Arrow File: Read a Parquet File",
     "Read Arrow File: Read a CSV File with Arrow",
     "Read Arrow File: Read a TSV File with Arrow",
     "Read Arrow File: Read a JSON File",
     "Write Arrow File: Write a Feather File",
-    "Write Arrow File: Write a Arrow IPC (aka Feather) File",
-    "Write Arrow File: Write Arrow Data to Raw Vector",
+    "Write Arrow File: Write an Arrow IPC (aka Feather) File",
+    "Write Arrow File: Write an Arrow Data to Raw Vector",
     "Write Arrow File: Write a Parquet File",
     "Write Arrow File: Write a CSV File with Arrow",
     "Back"
@@ -242,7 +242,7 @@ arrow_menu <- function() {
     "Read a TSV File with Arrow",
     "Read a JSON File with Arrow",
     "Wrote a Feather File",
-    "Wrote a Arrow IPC (aka Feather) File",
+    "Wrote an Arrow IPC (aka Feather) File",
     "Wrote Arrow Data to Raw Vector",
     "Wrote a Parquet File",
     "Wrote a CSV File with Arrow"
