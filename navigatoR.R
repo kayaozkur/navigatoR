@@ -207,7 +207,6 @@ arrow_menu <- function() {
     "Read Arrow File: Read a JSON File",
     "Write Arrow File: Write a Feather File",
     "Write Arrow File: Write a Arrow IPC (aka Feather) File",
-    "Write Arrow File: Write Arrow IPC Stream Format",
     "Write Arrow File: Write Arrow Data to Raw Vector",
     "Write Arrow File: Write a Parquet File",
     "Write Arrow File: Write a CSV File with Arrow",
@@ -224,22 +223,26 @@ arrow_menu <- function() {
     "arrow::read_parquet(file = \"xxxxx\", col_select = NULL, as_data_frame = TRUE, props = ParquetArrowReaderProperties$create())",
     "arrow::read_csv_arrow(file = \"xxxxx.csv\", escape_double = TRUE, escape_backslash = FALSE, schema = NULL, col_names = TRUE, col_types = NULL, col_select = NULL, na = c(\"\", \"NA\"), quoted_na = TRUE, skip_empty_rows = TRUE, skip = 0L)",
     "arrow::read_tsv_arrow(file = \"xxxxx.tsv\", escape_double = TRUE, escape_backslash = FALSE, schema = NULL, col_names = TRUE, col_types = NULL, col_select = NULL, na = c(\"\", \"NA\"), quoted_na = TRUE, skip_empty_rows = TRUE, skip = 0L)",
-
+    "arrow::read_json_arrow(file = \"xxxxx.json\", col_select = NULL, as_data_frame = TRUE, schema = NULL)",
+    "arrow::write_feather(x = data_frame, sink = \"xxxxx.feather\", version = c(1,2))", #version 1 for legacy .feather files, version 2 for .arrow files
+    "arrow::write_ipc(x = data_frame, sink = \"xxxxx.arrow\")",
+    "arrow::write_to_raw(x = data_frame, format = c(\"stream\", \"file\"))",
+    "arrow::write_parquet(x = data_frame, sink = \"xxxxx.parquet\", compression = arrow::default_parquet_compression())",
+    "arrow::write_csv_arrow(x = data_frame, sink = \"xxxxx.csv\", include_header = TRUE, na = \"\")",
     return(sub_menu())
   )
 
   # Define Comments for the Selected Option
   arrow_selected_action <- switch(arrow_selection,
     "Read a Feather File",
-    "Read a Arrow IPC (aka Feather) File",
-    "Read Arrow IPC Stream Format",
+    "Read an Arrow IPC (aka Feather) File",
+    "Read an Arrow IPC Stream Format",
     "Read a Parquet File",
-    "Read a Delimited File with Arrow",
     "Read a CSV File with Arrow",
     "Read a TSV File with Arrow",
+    "Read a JSON File with Arrow",
     "Wrote a Feather File",
     "Wrote a Arrow IPC (aka Feather) File",
-    "Wrote Arrow IPC Stream Format",
     "Wrote Arrow Data to Raw Vector",
     "Wrote a Parquet File",
     "Wrote a CSV File with Arrow"
